@@ -9,7 +9,8 @@ Action Message Format(AMF) is a binary format used to serialize objects and send
 ## TODO
 
 - Finish AMF3 Objects ( also finish typed objects ) 
-- Fix  bug reading dates in AMF0
+- Add AMF3 Deserializing
+- Fix bug reading dates in AMF0
 - Creating server
 - Adding examples, instructions, and usage.
 
