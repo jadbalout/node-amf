@@ -1,0 +1,20 @@
+{
+  "name": "nodeamf",
+  "version": "1.0.0",
+  "description": "AMF library for NodeJS",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "keywords": [
+    "flash",
+    "amf"
+  ],
+  "author": "Jad Balout",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "express": "^4.17.1"
+  }
+}
