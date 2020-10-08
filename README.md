@@ -10,32 +10,32 @@ Action Message Format(AMF) is a binary format used to serialize objects and send
 
 ### AMF Client:
 #### Using async/await: 
-    ```javascript
-    const {AMFClient, AMF3Wrapper} = require('./node-amf');
+```javascript
+const {AMFClient, AMF3Wrapper} = require('./node-amf');
 
-    async function request() {
-        let client = new AMFClient('http://localhost/Gateway.aspx?method=Method');
-        client.addHeader('needClassName', false, true);
-        client.addHTTPHeader("Referer", "app:/Main");
-
-        let data = new AMF3Wrapper([]);
-        var response = await client.sendRequest('target', data);
-        console.log(response.bodies[0]);
-    }
-    request();
-    ```
-#### Using then:
-    ```javascript
-    const {AMFClient, AMF3Wrapper} = require('./node-amf');
+async function request() {
     let client = new AMFClient('http://localhost/Gateway.aspx?method=Method');
     client.addHeader('needClassName', false, true);
     client.addHTTPHeader("Referer", "app:/Main");
 
     let data = new AMF3Wrapper([]);
-    client.sendRequest('target', data).then( (response) => {
-        console.log(response.bodies[0]);
-    });
-    ```
+    var response = await client.sendRequest('target', data);
+    console.log(response.bodies[0]);
+}
+request();
+```
+#### Using then:
+```javascript
+const {AMFClient, AMF3Wrapper} = require('./node-amf');
+let client = new AMFClient('http://localhost/Gateway.aspx?method=Method');
+client.addHeader('needClassName', false, true);
+client.addHTTPHeader("Referer", "app:/Main");
+
+let data = new AMF3Wrapper([]);
+client.sendRequest('target', data).then( (response) => {
+    console.log(response.bodies[0]);
+});
+```
 ## TODO
 
 - Finish AMF3 Objects ( also finish typed objects ) 
