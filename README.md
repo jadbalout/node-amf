@@ -38,8 +38,6 @@ client.sendRequest('target', data).then( (response) => {
 ```
 ## TODO
 
-- Finish AMF3 Objects ( also finish typed objects ) 
-- Add AMF3 Deserializing
 - Creating server
 - Adding examples.
 
