@@ -1,20 +1,26 @@
 {
-  "name": "nodeamf",
+  "name": "@jadbalout/nodeamf",
   "version": "1.0.0",
   "description": "AMF library for NodeJS",
   "main": "index.js",
   "directories": {
-    "lib": "lib",
-    "test": "test"
+    "lib": "lib"
   },
   "keywords": [
     "flash",
     "amf"
   ],
+  "homepage": "https://github.com/jadbalout/node-amf",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jadbalout/node-amf"
+  },
   "author": "Jad Balout",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.20.0",
-    "express": "^4.17.1"
+    "eventemitter3": "^4.0.7",
+    "express": "^4.17.1",
+    "np": "^6.5.0"
   }
 }

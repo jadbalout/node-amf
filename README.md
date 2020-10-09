@@ -14,10 +14,10 @@ Action Message Format(AMF) is a binary format used to serialize objects and send
 const {AMFClient, AMF3Wrapper} = require('./node-amf');
 
 async function request() {
-    let client = new AMFClient('http://localhost/Gateway.aspx?method=Method');
+    let client = new AMFClient('http://localhost:8888/');
     client.addHeader('needClassName', false, true);
     client.addHTTPHeader("Referer", "app:/Main");
-
+    client.addGETParam('method', 'Service.function');
     let data = new AMF3Wrapper([]);
     var response = await client.sendRequest('target', data);
     console.log(response.bodies[0]);
@@ -27,9 +27,10 @@ request();
 #### Using then:
 ```javascript
 const {AMFClient, AMF3Wrapper} = require('./node-amf');
-let client = new AMFClient('http://localhost/Gateway.aspx?method=Method');
+let client = new AMFClient('http://localhost:8888/');
 client.addHeader('needClassName', false, true);
 client.addHTTPHeader("Referer", "app:/Main");
+client.addGETParam('method', 'Service.function');
 
 let data = new AMF3Wrapper([]);
 client.sendRequest('target', data).then( (response) => {
