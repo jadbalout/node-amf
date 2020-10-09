@@ -1,5 +1,7 @@
 # node-amf
 
+[![npm version](https://img.shields.io/npm/v/@jadbalout/nodeamf)](https://www.npmjs.com/package/@jadbalout/nodeamf)
+
 node-amf is an AMF library for NodeJS that serializies, deserializies, sends and handles AMF data.
 
 ## What is AMF?
@@ -8,9 +10,16 @@ Action Message Format(AMF) is a binary format used to serialize objects and send
 
 ## Usage
 
+### Parsing/Serializing:
+```javascript
+const nodeamf = require('@jadbalout/nodeamf');
+const serialized = nodeamf.serialize([5,7], nodeamf.ENCODING.AMF0);
+const deserialized = nodeamf.deserialize(serialized, nodeamf.ENCODING.AMF0);
+```
+
 ### AMF Server:
 ```javascript
-const {AMFServer, Service} = require('../index');
+const {AMFServer, Service} = require('@jadbalout/nodeamf');
 class BookService extends Service {
 
     constructor() {
@@ -54,8 +63,8 @@ server.listen(() => {
 ### AMF Client:
 #### Using async/await: 
 ```javascript
-const {AMFClient, AMF0} = require('./node-amf');
-const client = new AMFClient('http://localhost:8080/Gateway', AMF0);
+const {AMFClient, ENCODING} = require('@jadbalout/nodeamf');
+const client = new AMFClient('http://localhost:8080/Gateway', ENCODING.AMF0);
 client.addHeader('needClassName', false, true);
 async function orderBook(bookName, allowance) {
     //Check book price
@@ -74,8 +83,8 @@ orderBook('Harry Potter', 100);
 ```
 #### Using then:
 ```javascript
-const {AMFClient, AMF0} = require('../lib/amf');
-const client = new AMFClient('http://localhost:8080/Gateway', AMF0);
+const {AMFClient, ENCODING} = require('@jadbalout/nodeamf');
+const client = new AMFClient('http://localhost:8080/Gateway', ENCODING.AMF0);
 client.addHeader('needClassName', false, true);
 function orderBook(bookName, allowance) {
     //Check book price
